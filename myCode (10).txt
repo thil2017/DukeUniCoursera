@@ -1,0 +1,26 @@
+function setBlack(x) {
+        x.setRed(0);
+        x.setGreen(0);
+        x.setBlue(0);
+}
+
+function addBorder (img, thickness){
+    
+    for(var pixel of img.values()){
+        var a = pixel.getX();
+        var b = pixel.getY();
+        var c = img.getWidth()-thickness;
+        var d = img.getHeight()-thickness;
+        
+        if (a < thickness){setBlack(pixel);}
+        if (b < thickness){setBlack(pixel);}
+        if (a > c){setBlack(pixel);}
+        if (b > d){setBlack(pixel);}
+   
+    }
+}
+
+var x = new SimpleImage("chapel.png");
+var y = addBorder(x, 10)
+
+print (x);

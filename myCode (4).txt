@@ -1,0 +1,83 @@
+// write your code here
+/*var x= 4;
+var y=10;
+var z=x+y;
+print (z);
+
+function square (x) {
+    return x*x;
+}
+
+y =  square(15);
+print(y);
+
+var img = new SimpleImage("chapel.png");
+print (img);
+print (img.getWidth());
+print (img.getHeight());
+a=img.getPixel(22,225);
+print(a.getRed());
+print(a.getGreen());
+print(a.getBlue());
+
+function sumofthree(x,y,z){
+    return x+y+z
+}
+a=sumofthree(10,40,20);
+print(a);
+
+function sumofthree(x,y,z){
+    return x+y+z
+}
+a=sumofthree('10','40','20');
+print(a);
+
+
+var img1= new SimpleImage(200,200);
+print(img1);
+for (var pixel of img1.values()){
+    pixel.setRed(255);
+    pixel.setGreen(255);
+}
+
+print(img1);
+
+
+
+var img2= new SimpleImage ('smallpanda.png');
+var a = img2.getWidth()/3;
+var b = 2*a;
+
+for (var pixel of img2.values()){
+    if (pixel.getX() <= a ){
+        pixel.setRed(255);
+    }
+    else{
+        if (pixel.getX() <= b ){
+        pixel.setGreen(255);
+        }
+        else{
+            pixel.setBlue(255);
+        }
+    }
+    
+    
+}
+print(img2);
+
+
+function swapRedGreen(x) {
+ for (var pixel of x.values()){
+     var a = pixel.getGreen();
+     var b = pixel.getRed();
+     pixel.setGreen(b);
+     pixel.setRed(a);
+      }
+}
+
+var img3 = new SimpleImage('smallhands.png');
+print (img3);
+
+swapRedGreen (img3);
+print(img3);
+*/
