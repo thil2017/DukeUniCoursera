@@ -1,5 +1,4 @@
-// write your code here
-/*var x= 4;
+var x= 4;
 var y=10;
 var z=x+y;
 print (z);
@@ -32,8 +31,6 @@ function sumofthree(x,y,z){
 a=sumofthree('10','40','20');
 print(a);
 
-*/
-
 var img1= new SimpleImage(200,200);
 print(img1);
 for (var pixel of img1.values()){
@@ -43,3 +40,144 @@ for (var pixel of img1.values()){
 
 print(img1);
 
+var img2= new SimpleImage ('smallpanda.png');
+var a = img2.getWidth()/3;
+var b = 2*a;
+
+for (var pixel of img2.values()){
+    if (pixel.getX() <= a ){
+        pixel.setRed(255);
+    }
+    else{
+        if (pixel.getX() <= b ){
+        pixel.setGreen(255);
+        }
+        else{
+            pixel.setBlue(255);
+        }
+    }
+    
+    
+}
+print(img2);
+
+function swapRedGreen(x) {
+ for (var pixel of x.values()){
+     var a = pixel.getGreen();
+     var b = pixel.getRed();
+     pixel.setGreen(b);
+     pixel.setRed(a);
+      }
+}
+
+var img3 = new SimpleImage('smallhands.png');
+print (img3);
+
+swapRedGreen (img3);
+print(img3);
+
+function swapRedBlue(x) {
+ for (var pixel of x.values()){
+     var p = pixel.getBlue();
+     var q = pixel.getRed();
+     pixel.setBlue(q);
+     pixel.setRed(p);
+     pixel.setGreen(p);
+      }
+}
+
+
+var img4 = new SimpleImage("duke_blue_devil.png");
+
+swapRedBlue(img4);
+print(img4);
+
+
+
+var fgimage = new SimpleImage ('drewRobert.png');
+var bgimage = new SimpleImage ('dinos.png');
+var newimage = new SimpleImage (fgimage.getWidth(), fgimage.getHeight());
+
+for (var pixel of fgimage.values()) {
+    if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()){
+        var x = pixel.getX();
+        var y = pixel.getY();
+        var newpixel = bgimage.getPixel(x,y);
+        newimage.setPixel (pixel.getX(), pixel.getY(), newpixel);
+    }
+    else{
+        newimage.setPixel(pixel.getX(), pixel.getY(), pixel);
+    }
+}
+
+
+
+
+var img4 = new SimpleImage ("duke_blue_devil.png");
+for (var pixel of img4.values()){
+    if (pixel.getRed() != pixel.getBlue()) {
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    }
+}
+print(img4)
+
+
+
+
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if (x < img.getWidth()/2){
+        if (y< img.getHeight()/2){
+            px.setRed(255);
+        }
+        else {
+            px.setRed(255);
+            px.setBlue(255);
+        }
+  }
+  else {
+      if (y< img.getHeight()/2) {
+          px.setGreen(255);
+      }
+      else {
+          px.setBlue(255);
+      }
+  }
+  
+  
+}
+print (img);
+
+
+
+
+function setBlack(x) {
+        x.setRed(0);
+        x.setGreen(0);
+        x.setBlue(0);
+}
+
+function addBorder (img, thickness){
+    
+    for(var pixel of img.values()){
+        var a = pixel.getX();
+        var b = pixel.getY();
+        var c = img.getWidth()-thickness;
+        var d = img.getHeight()-thickness;
+        
+        if (a < thickness){setBlack(pixel);}
+        if (b < thickness){setBlack(pixel);}
+        if (a > c){setBlack(pixel);}
+        if (b > d){setBlack(pixel);}
+   
+    }
+}
+
+var x = new SimpleImage("chapel.png");
+var y = addBorder(x, 10)
+
+print (x);
